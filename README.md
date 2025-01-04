@@ -1,8 +1,6 @@
 
 ## 🚀 About Me
-I'm just a student at Gunadarma University. 
-
-
+I'm a student at Gunadarma University. I have never done full stack before. I mainly work on game modding, reverse engineering, backend development, and other tech-related tasks
 
 -*mfarrellr*
 
@@ -39,7 +37,7 @@ Start the server
 
 If you encounter a problem such as `module not found`, it might be due to using a different version of Python or a different global environment.
 
-Please make sure to use the correct environment or a virtual environment.
+Please make sure you use correct environment or use virtual environment.
 
 Conda environment
 ```bash
