@@ -7,44 +7,95 @@
     <title>Edit Mata Kuliah</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: #121212;
+            font-family: Arial, sans-serif;
+            color: #e0e0e0;
+        }
+
+        .container {
+            max-width: 500px;
+            margin-top: 50px;
+            padding: 30px;
+            background-color: #1e1e1e;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        h3 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        .form-group label {
+            color: #e0e0e0;
+        }
+
+        .form-group input {
+            background-color: #333;
+            color: #e0e0e0;
+            border: 1px solid #555;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        .form-group input:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+            border: none;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 
 <body>
     <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <form method="POST">
-                    <h3 class="one mt-4">Edit Mata Kuliah</h3>
-                    <!-- kotak untuk input mata kuliah -->
-                    <div class="form-group mb-3 mt-5">
-                        <label for="inputKodeMataKuliah">Kode Mata Kuliah</label>
-                        <input type="text" name="kodematkul" class="form-control" id="inputKodeMataKuliah"
-                            placeholder="Kode Mata Kuliah" value="{{ kode_matkul }}">
-                    </div>
-                    <!-- kotak input nama matkul -->
-                    <div class="form-group mb-3">
-                        <label for="inputNamaMataKuliah">Nama Mata Kuliah</label>
-                        <input type="text" name="matkul" class="form-control" id="inputNamaMataKuliah"
-                            placeholder="Nama Mata Kuliah">
-                    </div>
-                    <!-- kotak input fakultas -->
-                    <div class="form-group mb-3">
-                        <label for="inputFakultas">Fakultas</label>
-                        <input type="text" name="fakultas" class="form-control" id="inputFakultas"
-                            placeholder="Fakultas">
-                    </div>
-                    <!-- kotak input sks -->
-                    <div class="form-group mb-3">
-                        <label for="inputSKS">SKS</label>
-                        <input type="text" name="sks" class="form-control" id="inputSKS" placeholder="SKS">
-                    </div>
-
-                    <!-- button konfirmasi untuk mengubah -->
-                    <button type="submit" class="btn btn-primary">Ubah</button>
-
-                </form>
+        <h3>Edit Mata Kuliah</h3>
+        <form method="POST">
+            <!-- Input for Mata Kuliah Code -->
+            <div class="form-group mb-3">
+                <label for="inputKodeMataKuliah">Kode Mata Kuliah</label>
+                <input type="text" name="kodematkul" id="inputKodeMataKuliah" placeholder="Kode Mata Kuliah"
+                    value="{{ kode_matkul }}">
             </div>
-        </div>
+            <!-- Input for Mata Kuliah Name -->
+            <div class="form-group mb-3">
+                <label for="inputNamaMataKuliah">Nama Mata Kuliah</label>
+                <input type="text" name="matkul" id="inputNamaMataKuliah" placeholder="Nama Mata Kuliah"
+                    value="{{ matkul }}">
+            </div>
+            <!-- Input for Fakultas -->
+            <div class="form-group mb-3">
+                <label for="inputFakultas">Fakultas</label>
+                <input type="text" name="fakultas" id="inputFakultas" placeholder="Fakultas" value="{{ fakultas }}">
+            </div>
+            <!-- Input for SKS -->
+            <div class="form-group mb-3">
+                <label for="inputSKS">SKS</label>
+                <input type="text" name="sks" id="inputSKS" placeholder="SKS" value="{{ sks }}">
+            </div>
+
+            <!-- Submit button to confirm the changes -->
+            <button type="submit">Ubah</button>
+        </form>
     </div>
 </body>
 

@@ -4,50 +4,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Tambah Mata Kuliah</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <!-- <link href="{{ url_for('static', filename='boostrap.min.css') }}" rel="stylesheet"> -->
+    <style>
+        body {
+            background-color: #121212;
+            font-family: Arial, sans-serif;
+            color: #e0e0e0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin-top: 50px;
+            padding: 30px;
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        h3 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #ffffff;
+        }
+
+        .form-group input {
+            background-color: #333;
+            color: #e0e0e0;
+            border: 1px solid #555;
+            border-radius: 5px;
+            padding: 12px;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        .form-group input:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+            padding: 12px 15px;
+            width: 100%;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            color: #ffffff;
+        }
+    </style>
 </head>
 
 <body>
+
     <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <form method="POST">
-                    <!-- title tambah matkul -->
-                    <h3 class="one mt-4">Tambah Mata Kuliah</h3>
-                    <!-- kotak input kode matkul -->
-                    <div class="form-group mb-3 mt-5">
-                        <label for="inputKodeMataKuliah">Kode Mata Kuliah</label>
-                        <input type="text" name="kodematkul" class="form-control" id="inputKodeMataKuliah"
-                            placeholder="Kode Mata Kuliah">
-                    </div>
-                    <!-- kotak input nama matkul -->
-                    <div class="form-group mb-3">
-                        <label for="inputNamaMataKuliah">Nama Mata Kuliah</label>
-                        <input type="text" name="matkul" class="form-control" id="inputNamaMataKuliah"
-                            placeholder="Nama Mata Kuliah">
-                    </div>
-                    <!-- kotak input nama fakultas -->
-                    <div class="form-group mb-3">
-                        <label for="inputFakultas">Fakultas</label>
-                        <input type="text" name="fakultas" class="form-control" id="inputFakultas"
-                            placeholder="Fakultas">
-                    </div>
-                    <!-- kotak input sks -->
-                    <div class="form-group mb-3">
-                        <label for="inputSKS">SKS</label>
-                        <input type="text" name="sks" class="form-control" id="inputSKS" placeholder="SKS">
-                    </div>
-                    <!-- tombol untuk submit data -->
-                    <button type="submit" class="btn btn-primary">Submit</button>
+        <form method="POST">
+            <h3>Tambah Mata Kuliah</h3>
 
-                </form>
+            <!-- Kode Mata Kuliah -->
+            <div class="form-group">
+                <label for="inputKodeMataKuliah">Kode Mata Kuliah</label>
+                <input type="text" name="kodematkul" class="form-control" id="inputKodeMataKuliah"
+                    placeholder="Kode Mata Kuliah" required>
             </div>
-        </div>
-    </div>
 
+            <!-- Nama Mata Kuliah -->
+            <div class="form-group">
+                <label for="inputNamaMataKuliah">Nama Mata Kuliah</label>
+                <input type="text" name="matkul" class="form-control" id="inputNamaMataKuliah"
+                    placeholder="Nama Mata Kuliah" required>
+            </div>
+
+            <!-- Fakultas -->
+            <div class="form-group">
+                <label for="inputFakultas">Fakultas</label>
+                <input type="text" name="fakultas" class="form-control" id="inputFakultas" placeholder="Fakultas"
+                    required>
+            </div>
+
+            <!-- SKS -->
+            <div class="form-group">
+                <label for="inputSKS">SKS</label>
+                <input type="text" name="sks" class="form-control" id="inputSKS" placeholder="SKS" required>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
 
 </body>
 
