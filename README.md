@@ -12,6 +12,13 @@ Development of a Web-based CRUD Application to Meet GUCC Requirements.
 
 Code written in Python 3.11.11 with a conda environment. Please ensure everything is set up correctly, as Python can be quite tricky at times.
 ## Run Locally
+Ensure that the crud database is created in your database management system (DBMS)
+
+```bash
+  CREATE DATABASE crud;
+```
+
+Once the database crud has been created, proceed to import the provided SQL file into the database.
 
 Clone the project
 
