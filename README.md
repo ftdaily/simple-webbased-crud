@@ -1,6 +1,8 @@
 
 ## 🚀 About Me
-I'm a student at Gunadarma University. I have never done this thing before. I mainly work on game modding, reverse engineering, backend development, and other tech-related tasks
+I'm a student at Gunadarma University. I have never done this before. I mainly work on game modding, reverse engineering, backend development, and other tech-related tasks.
+
+Flask is used because it's easier to set up and run, and it's beginner-friendly.
 
 -*mfarrellr*
 
