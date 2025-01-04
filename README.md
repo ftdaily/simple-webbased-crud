@@ -39,7 +39,7 @@ Start the server
 
 If you encounter a problem such as `module not found`, it might be due to using a different version of Python or a different global environment.
 
-Please make sure you use correct environment or use virtual environment.
+Please make sure to use the correct environment or a virtual environment.
 
 Conda environment
 ```bash
