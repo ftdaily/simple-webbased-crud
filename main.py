@@ -95,16 +95,37 @@ def tambahMataKuliah():
 @app.route('/mahasiswa/mata_kuliah/edit/<int:kode_matkul>', methods=['GET', 'POST'])
 def editMataKuliah(kode_matkul):
     if request.method == 'POST':
-        kode_matkul_new = request.form['kodematkul']
-        nama_matkul = request.form['matkul']
-        fakultas = request.form['fakultas']
-        sks = request.form['sks']
+        # Get the form data
+        kode_matkul_new = request.form.get('kodematkul')
+        nama_matkul = request.form.get('matkul')
+        fakultas = request.form.get('fakultas')
+        sks = request.form.get('sks')
 
-        query_db(
-            'UPDATE mata_kuliah SET kode_matkul = %s, nama_mk = %s, fakultas = %s, sks = %s WHERE kode_matkul = %s',
-            (kode_matkul_new, nama_matkul, fakultas, sks, kode_matkul),
-            commit=True
-        )
+        # Persiapan untuk mengupdate query
+        query = 'UPDATE mata_kuliah SET '
+        params = []
+
+        # Add only non-empty fields to the query
+        if kode_matkul_new:
+            query += 'kode_matkul = %s, '
+            params.append(kode_matkul_new)
+        if nama_matkul:
+            query += 'nama_mk = %s, '
+            params.append(nama_matkul)
+        if fakultas:
+            query += 'fakultas = %s, '
+            params.append(fakultas)
+        if sks:
+            query += 'sks = %s, '
+            params.append(sks)
+
+        # Remove the last comma and space, add the WHERE condition
+        query = query.rstrip(', ') + ' WHERE kode_matkul = %s'
+        params.append(kode_matkul)
+
+        # Execute the query
+        query_db(query, tuple(params), commit=True)
+
         flash('Mata kuliah updated successfully!', 'success')
         return redirect(url_for('matakuliah'))
 
@@ -158,15 +179,30 @@ def tambahMahasiswa():
 @app.route('/mahasiswa/edit/<int:npm>', methods=['GET', 'POST'])
 def editMahasiswa(npm):
     if request.method == 'POST':
-        nama = request.form['namamahasiswa']
-        npm_new = request.form['npmmahasiswa']
-        jurusan = request.form['jurusanmahasiswa']
+        nama = request.form.get('namamahasiswa')
+        npm_new = request.form.get('npmmahasiswa')
+        jurusan = request.form.get('jurusanmahasiswa')
 
-        query_db(
-            'UPDATE mahasiswa SET nama = %s, npm = %s, jurusan = %s WHERE npm = %s',
-            (nama, npm_new, jurusan, npm),
-            commit=True
-        )
+        # Update only the field that has been changed
+        if nama:
+            query_db(
+                'UPDATE mahasiswa SET nama = %s WHERE npm = %s',
+                (nama, npm),
+                commit=True
+            )
+        if npm_new:
+            query_db(
+                'UPDATE mahasiswa SET npm = %s WHERE npm = %s',
+                (npm_new, npm),
+                commit=True
+            )
+        if jurusan:
+            query_db(
+                'UPDATE mahasiswa SET jurusan = %s WHERE npm = %s',
+                (jurusan, npm),
+                commit=True
+            )
+
         flash('Mahasiswa updated successfully!', 'success')
         return redirect(url_for('mahasiswa'))
 

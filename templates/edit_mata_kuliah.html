@@ -74,23 +74,24 @@
             <div class="form-group mb-3">
                 <label for="inputKodeMataKuliah">Kode Mata Kuliah</label>
                 <input type="text" name="kodematkul" id="inputKodeMataKuliah" placeholder="Kode Mata Kuliah"
-                    value="{{ kode_matkul }}">
+                    value="{{ mata_kuliah['kode_matkul'] }}">
             </div>
             <!-- Input for Mata Kuliah Name -->
             <div class="form-group mb-3">
                 <label for="inputNamaMataKuliah">Nama Mata Kuliah</label>
                 <input type="text" name="matkul" id="inputNamaMataKuliah" placeholder="Nama Mata Kuliah"
-                    value="{{ matkul }}">
+                    value="{{ mata_kuliah['nama_mk'] }}">
             </div>
             <!-- Input for Fakultas -->
             <div class="form-group mb-3">
                 <label for="inputFakultas">Fakultas</label>
-                <input type="text" name="fakultas" id="inputFakultas" placeholder="Fakultas" value="{{ fakultas }}">
+                <input type="text" name="fakultas" id="inputFakultas" placeholder="Fakultas"
+                    value="{{ mata_kuliah['fakultas'] }}">
             </div>
             <!-- Input for SKS -->
             <div class="form-group mb-3">
                 <label for="inputSKS">SKS</label>
-                <input type="text" name="sks" id="inputSKS" placeholder="SKS" value="{{ sks }}">
+                <input type="text" name="sks" id="inputSKS" placeholder="SKS" value="{{ mata_kuliah['sks'] }}">
             </div>
 
             <!-- Submit button to confirm the changes -->

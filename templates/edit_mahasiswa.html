@@ -70,20 +70,25 @@
     <div class="container">
         <h3>Edit Data Mahasiswa</h3>
         <form method="POST">
+            <!-- Input for Nama Mahasiswa -->
             <div class="form-group mb-3">
                 <label for="inputNamaMahasiswa">Nama Mahasiswa</label>
-                <input type="text" name="namamahasiswa" id="inputNamaMahasiswa" placeholder="Nama Mahasiswa">
+                <input type="text" name="namamahasiswa" id="inputNamaMahasiswa" placeholder="Nama Mahasiswa"
+                    value="{{ mahasiswa['nama'] }}">
             </div>
 
+            <!-- Input for NPM Mahasiswa -->
             <div class="form-group mb-3">
                 <label for="inputNPMMahasiswa">NPM Mahasiswa</label>
                 <input type="text" name="npmmahasiswa" id="inputNPMMahasiswa" placeholder="NPM Mahasiswa"
-                    value="{{ npm }}">
+                    value="{{ mahasiswa['npm'] }}">
             </div>
 
+            <!-- Input for Jurusan Mahasiswa -->
             <div class="form-group mb-3">
                 <label for="inputJurusanMahasiswa">Jurusan Mahasiswa</label>
-                <input type="text" name="jurusanmahasiswa" id="inputJurusanMahasiswa" placeholder="Jurusan Mahasiswa">
+                <input type="text" name="jurusanmahasiswa" id="inputJurusanMahasiswa" placeholder="Jurusan Mahasiswa"
+                    value="{{ mahasiswa['jurusan'] }}">
             </div>
 
             <button type="submit">Ubah</button>
