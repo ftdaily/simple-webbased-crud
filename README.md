@@ -1,8 +1,5 @@
-
-## 🚀 About Me
 I'm a student at Gunadarma University. I have never done this before. I mainly work on game modding, reverse engineering, and other tech-related tasks.
-
-Flask is used because it's easier to set up and run, and it's beginner-friendly.
+Flask is used because it's easier to set up and run, and it's beginner-friendly, and also I had no time to create something new and complex.
 
 -*mfarrellr*
 
